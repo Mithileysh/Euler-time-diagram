@@ -1,0 +1,47 @@
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <div id="series_chart_div" style="width: 900px; height: 500px;"></div>
+   <script>
+
+google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawSeriesChart);
+
+    function drawSeriesChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['ID', 'Year', 'Disease Rate', 'Diseases',     'Population'],
+        ['',    2012,              1.87,      'Diabetes',  33739900],
+        ['',    2012,              1.36,      'Skin Cancer',         81902307],
+		['',    2013,              1.36,      'Skin Cancer',         81902307],
+		['',    2014,              1.36,      'Skin Cancer',         81902307],
+		['',    2015,              1.36,      'Skin Cancer',         81902307],
+        ['',    2014,               1.74,      'Breast Cancer',         5523095],
+        ['',    2012,              1.78,      'Lung Cancer',    79716203],
+		['',    2015,              1.78,      'Lung Cancer',    79716203],
+        ['',    2013,              2.1,         'Breast Cancer',         61801570],
+        ['',    2012,              1.6,         'Breast Cancer',         51601570],
+        ['',    2014,              1.7,       'Lung Cancer',    73137148],
+        ['',    2013,              1.77,      'Lung Cancer',    31090763],
+        ['',    2015,              2.96,      'Breast Cancer',    7485600],
+        ['',    2012,               1.64,      'HIV/AIDS',         141850000],
+		['',    2013,               1.54,      'HIV/AIDS',         141850000],
+		['',    2014,               1.48,      'HIV/AIDS',         141850000],
+		['',    2015,               1.48,      'HIV/AIDS',         141850000],
+        ['',    2013,              2.05,      'Diabetes',  307007000],
+		['',    2014,              2.15,      'Diabetes',  307007000],
+		['',    2015,              2.15,      'Diabetes',  307007000]
+      ]);
+
+      var options = {
+      //  title: 'Correlation between life expectancy, fertility rate ' +
+       //        'and population of some world countries (2010)',
+        hAxis: {title: 'Year'},
+        vAxis: {title: 'Disease Rate'},
+        bubble: {textStyle: {fontSize: 11}},
+		 bubble: {opacity: '0.6'}
+      };
+
+      var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
+      chart.draw(data, options);
+    }
+	</script>
